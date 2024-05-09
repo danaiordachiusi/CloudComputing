@@ -1,19 +1,19 @@
-// /pages/records/edit.jsx
+// /pages/trips/edit.jsx
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Spinner from "@/components/Spinner";
-import { recordDefaultValues } from "@/utils/constants";
-import { getRecordById, updateRecord } from "@/utils/recordsFunctions";
-import RecordForm from "@/components/RecordForm";
+import { tripDefaultValues } from "@/utils/constants";
+import { getTripById, updateTrip } from "@/utils/tripsFunctions";
+import TripForm from "@/components/TripForm";
 
 const Edit = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
-  const [entry, setEntry] = useState(recordDefaultValues);
+  const [entry, setEntry] = useState(tripDefaultValues);
 
-  const getRecord = async (id) => {
-    const data = await getRecordById(id);
+  const getTrip = async (id) => {
+    const data = await getTripById(id);
 
     if (data) {
       setEntry(data);
@@ -23,12 +23,12 @@ const Edit = () => {
   };
 
   const onSubmit = async (data) => {
-    const response = await updateRecord(data);
+    const response = await updateTrip(data);
 
     if (response) {
       router.push("/");
     } else {
-      alert("Failed to update record");
+      alert("Failed to update trip");
     }
   }
 
@@ -40,7 +40,7 @@ const Edit = () => {
       router.push("/");
     }
 
-    getRecord(id);
+    getTrip(id);
   }, []);
 
   if (isLoading) {
@@ -50,9 +50,9 @@ const Edit = () => {
   return (
     <>
       {entry._id ? (
-        <RecordForm data={entry} onSubmit={onSubmit}/>
+        <TripForm data={entry} onSubmit={onSubmit}/>
       ) : (
-        <div className="text-center">Record not found</div>
+        <div className="text-center">Trip not found</div>
       )}
     </>
   );

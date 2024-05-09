@@ -1,8 +1,8 @@
-// /utils/recordsFunctions.js
+// /utils/tripsFunctions.js
 
-export const getRecords = async () => {
+export const getTrips = async () => {
     try {
-        const response = await fetch("/api/records", {
+        const response = await fetch("/api/trips", {
             method: "GET",
         });
     
@@ -18,9 +18,9 @@ export const getRecords = async () => {
     }
 }
 
-export const getRecordById = async (id) => {
+export const getTripById = async (id) => {
     try {
-        const response = await fetch(`/api/records?id=${id}`, {
+        const response = await fetch(`/api/trips?id=${id}`, {
             method: "GET",
         });
     
@@ -36,16 +36,16 @@ export const getRecordById = async (id) => {
     }
 }
 
-export const createRecord = async (record) => {
+export const createTrip = async (trip) => {
     try {
-        delete record._id;
+        delete trip._id;
 
-        const response = await fetch("/api/records", {
+        const response = await fetch("/api/trips", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(record),
+            body: JSON.stringify(trip),
         });
 
         const data = await response.json();
@@ -60,14 +60,14 @@ export const createRecord = async (record) => {
     }
 }
 
-export const updateRecord = async (record) => {
+export const updateTrip = async (trip) => {
     try {
-        const response = await fetch("/api/records", {
+        const response = await fetch("/api/trips", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(record),
+            body: JSON.stringify(trip),
         });
 
         const data = await response.json();
@@ -82,9 +82,9 @@ export const updateRecord = async (record) => {
     }
 }
 
-export const deleteRecord = async (id) => {
+export const deleteTrip = async (id) => {
     try {
-        const response = await fetch(`/api/records?id=${id}`, {
+        const response = await fetch(`/api/trips?id=${id}`, {
             method: "DELETE",
         });
 

@@ -1,33 +1,33 @@
-// /pages/api/records.js
+// /pages/api/trips.js
 
 import {sendMethodNotAllowed, sendOk,} from '@/utils/apiMethods.js';
 import {getCollection} from "@/utils/functions";
 import {ObjectId,} from 'mongodb';
-const COLLECTION_NAME = 'records';
+const COLLECTION_NAME = 'trips';
 
-const getRecords = async () => {
+const getTrips = async () => {
 	const collection = await getCollection(COLLECTION_NAME);
 	return collection.find({}).toArray();
 }
 
-const getRecord = async (id) => {
+const getTrip = async (id) => {
     const collection = await getCollection(COLLECTION_NAME);
     return collection.findOne({_id: ObjectId.createFromHexString(id)});
 }
 
-const postRecord = async (record) => {
+const postTrip = async (trip) => {
 	const collection = await getCollection(COLLECTION_NAME);
-	return collection.insertOne(record);
+	return collection.insertOne(trip);
 }
 
-const putRecord = async (record) => {
+const putTrip = async (trip) => {
 	const collection = await getCollection(COLLECTION_NAME);
-	const id = record._id;
-	delete record._id;
-	return collection.updateOne({_id: new ObjectId(id)}, {$set: record});
+	const id = trip._id;
+	delete trip._id;
+	return collection.updateOne({_id: new ObjectId(id)}, {$set: trip});
 }
 
-const deleteRecord = async (id) => {
+const deleteTrip = async (id) => {
 	const collection = await getCollection(COLLECTION_NAME);
 	return collection.deleteOne({_id: new ObjectId(id)});
 }
@@ -41,26 +41,26 @@ export default async function handler(req, res) {
 
 	if(req.method === 'GET' && req.query.id) {
 		const id = req.query.id;
-		const record = await getRecord(id);
-		return sendOk(res, record);
+		const trip = await getTrip(id);
+		return sendOk(res, trip);
 	}
 	else if(req.method === 'GET') {
-		const records = await getRecords();
-		return sendOk(res, records);
+		const trips = await getTrips();
+		return sendOk(res, trips);
 	}
 	else if(req.method === 'POST') {
-		const record = req.body;
-		const result = await postRecord(record);
+		const trip = req.body;
+		const result = await postTrip(trip);
 		return sendOk(res, result);
 	}
 	else if(req.method === 'PUT') {
-		const record = req.body;
-		const result = await putRecord(record);
+		const trip = req.body;
+		const result = await putTrip(trip);
 		return sendOk(res, result);
 	}
 	else if(req.method === 'DELETE') {
 		const id = req.query.id;
-		const result = await deleteRecord(id);
+		const result = await deleteTrip(id);
 		return sendOk(res, result);
 	}
 }

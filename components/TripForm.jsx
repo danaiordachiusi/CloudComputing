@@ -1,9 +1,9 @@
-// /components/RecordForm.jsx
+// /components/TripForm.jsx
 
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 
-const RecordForm = (props) => {
+const TripForm = (props) => {
   const { data, onSubmit } = props;
   const router = useRouter();
   const [entry, setEntry] = useState(data);
@@ -17,6 +17,8 @@ const RecordForm = (props) => {
   }
 
   return (
+    <>
+    <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 min-h-screen">
     <div className="flex justify-center p-4">
       <div className="border p-4 rounded-md shadow-sm flex flex-col gap-4 w-full max-w-80">
         <div>
@@ -70,7 +72,9 @@ const RecordForm = (props) => {
         </div>
       </div>
     </div>
+    </div>
+    </>
   );
 };
 
-export default RecordForm;
+export default TripForm;

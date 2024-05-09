@@ -1,6 +1,6 @@
 // /utils/constants.js
 
-export const recordDefaultValues = {
+export const tripDefaultValues = {
     _id: "",
     title: "",
     description: ""
