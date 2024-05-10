@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { deleteTrip, getTrips } from "@/utils/tripsFunctions";
 import TripCard from "./TripCard";
+import Header from "./Header";
 
 const MainPage = () => {
   const router = useRouter();
@@ -42,6 +43,7 @@ const MainPage = () => {
 
   return (
     <>
+    <Header />
     <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 min-h-screen">
     <div className="flex justify-center items-center h-[50px] mb-[100px]">
         <h1 className="text-3xl italic font-bold text-green-500">TripMania</h1>
