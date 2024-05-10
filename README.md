@@ -1,40 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Link aplicație: https://cloud-computing-daniela-iordachiusis-projects.vercel.app/
+Link GitHub: https://github.com/danaiordachiusi/CloudComputing
+Link Youtube: https://youtu.be/MQQWqQ5UuTw
 
-## Getting Started
+Descrierea aplicației:
+	Site-ul TripMania este un concept care inspira si educa persoanele interesate de călătorii, oferindu-le experiențe autentice și povești captivante din călătoriile altor oameni.
+	Pagina principala prezinta o lista a poveștilor călătoriilor, fiecare cu un titlu si o descriere pentru a vedea mai multe detalii se poate apasă pe View Description si de acolo o sa se deschis o mini fereastra.
+	Fiecare călătorie poate fi updatata apăsând butonul UPDATE sau ștearsa prin apăsarea butonului DELETE.
+	De asemenea, exista butonul CREATE A NEW TRIP care va redirecționa utilizatorul către alta pagina unde poate fi creata o noua călătorie. Aici se pot introduce titlul călătoriei si descrierea acesteia după care se poate apasă butonul CREATE sau, daca utilizatorul se răzgândește poate da CANCEL.
+	Daca se introduce ’’/chat’’ in url utilizatorul va fi redirecționat către o alta pagina in care este implementat un chatbot. Aici utilizatorul poate pune întrebări despre destinațiile care prezinta interes.(Aceasta funcționalitate a fost implementata doar pe branch-ul de develop, o sa ii prezint funcționalitatea atât de pe mașina locala, cat si pe platforma de Vercel).
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Tehnologii folosite:
+	NextJS – pentru crearea aplicatiei web
+	ReactJS - frontend
+	MongoDB Cloud – crearea bazei de date
+	Vercel – deploy-ul aplicatiei web
+	ChatGPT Api – crearea unui chatbot
+	Postman – testarea api-urilor web
+Tehnologii cloud: MongoDB, Vercel
